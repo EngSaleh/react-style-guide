@@ -1,9 +1,8 @@
 module.exports = {
   extends: ['airbnb'],
   rules: {
-    semi: [2, 'never'],
-    'function-paren-newline': [0],
-    'space-before-function-paren': [2, 'always'],
+    'function-paren-newline': ['error'],
+    'space-before-function-paren': ['error', 'always'],
     'comma-dangle': [
       'error',
       {
@@ -14,8 +13,7 @@ module.exports = {
         functions: 'never',
       },
     ],
-    'react/jsx-filename-extension': [2, 'never'],
-    'jsx-a11y/label-has-for': [2, {
+    'jsx-a11y/label-has-for': ['error', {
       required: {
         components: ['label'] ,
         required : {
@@ -23,6 +21,26 @@ module.exports = {
         }
       },
     }],
-    "react/jsx-filename-extension": [0],
+    'max-len': [
+      'error',
+      {
+        code: 80,
+        tabWidth: 2,
+        ignoreComments: true,
+        ignoreTrailingComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true,
+      },
+    ],
+    'react/jsx-filename-extension': ['off'],
+    'react/sort-prop-types': [
+      'error',
+      {
+        sortShapeProp: true
+      }
+    ],
+    'semi': ['error', 'never']
   },
 }
