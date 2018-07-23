@@ -1,5 +1,11 @@
 module.exports = {
   extends: ['airbnb'],
+  plugins: [
+    'import',
+    'jsx-a11y',
+    'react',
+    'wyze'
+  ],
   rules: {
     'function-paren-newline': ['error'],
     'space-before-function-paren': ['error', 'always'],
@@ -14,11 +20,9 @@ module.exports = {
       },
     ],
     'jsx-a11y/label-has-for': ['error', {
+      components: ['label'],
       required: {
-        components: ['label'] ,
-        required : {
-          some : ['nesting', 'id']
-        }
+        some: ['nesting', 'id'],
       },
     }],
     'max-len': [
@@ -38,9 +42,16 @@ module.exports = {
     'react/sort-prop-types': [
       'error',
       {
-        sortShapeProp: true
-      }
+        sortShapeProp: true,
+      },
     ],
-    'semi': ['error', 'never']
+    semi: ['error', 'never'],
+    'no-multiple-empty-lines': ["error", {
+      max: 1,
+      maxEOF: 1
+    }],
+    'multiline-ternary': ['error', 'always'],
+    'sort-keys': 'error',
+    'wyze/sort-destructuring-keys': ['error', 'asc']
   },
 }
